@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.15
+FROM ghcr.io/linuxserver/baseimage-alpine:3.16
 
 # set version label
 ARG BUILD_DATE
@@ -37,7 +37,7 @@ RUN \
     PYLOAD="pyload-ng[all]==${PYLOAD_VERSION}"; \
   fi && \
   pip3 install -U pip setuptools wheel && \
-  pip install -U --find-links https://wheel-index.linuxserver.io/alpine-3.15/ \
+  pip install -U \
     "${PYLOAD}" && \
   echo "**** cleanup ****" && \
   apk del --purge \
